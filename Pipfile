@@ -13,6 +13,11 @@ black = "*"
 isort = "*"
 flake8 = "*"
 pre-commit = "*"
+channels = "*"
+daphne = "*"
+django-shortuuidfield = "*"
+djangorestframework-simplejwt = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
