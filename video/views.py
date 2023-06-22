@@ -1,10 +1,14 @@
-from rest_framework import viewsets
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from .models import TestData
-from .serializers import TestDataSerializer
+from .models import Room
+from .serializers import RoomSerializer
 
 
 # Create your views here.
-class TestDataViewSet(viewsets.ModelViewSet):
-    queryset = TestData.objects.all()
-    serializer_class = TestDataSerializer
+class RoomAPIView(APIView):
+    def post(self, request, format=None):
+        room = Room.objects.create()
+        serializer = RoomSerializer(room)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
