@@ -1,7 +1,9 @@
 from django.db import models
+from shortuuidfield import ShortUUIDField
 
 
-# Create your models here.
-class TestData(models.Model):
-    testname = models.CharField(max_length=100)
-    testvalue = models.IntegerField()
+class Room(models.Model):
+    roomId = ShortUUIDField()
+
+    def __str__(self):
+        return self.roomId
