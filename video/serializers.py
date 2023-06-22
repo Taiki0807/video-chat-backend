@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from .models import TestData
+from .models import Room
 
 
-class TestDataSerializer(serializers.ModelSerializer):
+class RoomSerializer(serializers.ModelSerializer):
     class Meta:
-        model = TestData
-        fields = "__all__"
+        model = Room
+        fields = ("roomId",)
