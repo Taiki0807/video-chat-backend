@@ -1,9 +1,7 @@
-from django.urls import include, path
-from rest_framework import routers
+from django.urls import path
 
-from . import views
+from .views import RoomAPIView
 
-router = routers.DefaultRouter()
-router.register("testdata", views.TestDataViewSet)
-
-urlpatterns = [path("", include(router.urls))]
+urlpatterns = [
+    path("room", RoomAPIView.as_view(), name="room"),
+]
